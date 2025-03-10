@@ -12,11 +12,11 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 _____ 10 pts: The class meaningfully implements each of the tests in described in the `TrainTest.java`:
 
-      _____ `testEngineConstructor()`
-      _____ `testEngineGo()`
-      _____ `testCarAddPassenger()`
-      _____ `testCarRemovePassenger()`
-      _____ `testPassengerBoardCarWithSpace()`
+      __**Yes**___ `testEngineConstructor()`
+      _**Yes**____ `testEngineGo()`
+      _**Yes**____ `testCarAddPassenger()`
+      __**Yes**___ `testCarRemovePassenger()`
+      __**Yes**___ `testPassengerBoardCarWithSpace()`
       _____ `testPassengerBoardCarFull()`
       _____ `testTrainConstructor()`
       _____ `testTrainPassengerCount()`
@@ -41,6 +41,6 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed `rubric.md` file)
+_**Yes**____ 1 pt: All required files included with submission (including completed `rubric.md` file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the tests you implemented and what they do**
+__**Yes**___ 1 pt: `reflection.md` contains your reflection on the assignment, **including a detailed description of the tests you implemented and what they do**
