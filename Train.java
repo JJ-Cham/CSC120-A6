@@ -40,6 +40,14 @@ public class Train implements TrainRequirements {
         return this.cars.get(i);
     }
 
+    /**
+     * Returns the list of cars in the train.
+     * @return the list of cars
+     */
+    public ArrayList<Car> getCars() {
+        return this.cars;
+    }
+
     /** Accessor
      * Returns the maximum total capacity across all cars in the train
      * @return the total capacity of all cars combined 

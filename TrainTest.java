@@ -117,27 +117,106 @@ public class TrainTest {
 
     @Test
     public void testPassengerBoardCarFull() {
+
+        //create a car with 0 seats 
+        Car car = new Car(0);
+
+        //create a passenger 
+        Passenger p1 = new Passenger("JJ Cham", 18);
+
+        //attempt to board the passenger 
+        p1.boardCar(car);
+        
+        //assert that the car is full and no passengers can board  
+        assertEquals("No seats are available since car is full so passenger 1 should not be able to board.", 0, car.seatsRemaining());
+
         //fail();
     }
 
     // Train Tests
     @Test
     public void testTrainConstructor() {
+        FuelType fuelType = FuelType.ELECTRIC;
+        double fuelCapacity = 100.00;
+        int nCars = 5;
+        int passengerCapacity = 3;
+
+        Train train = new Train(fuelType, fuelCapacity, nCars, passengerCapacity);
+
+        Engine engine = train.getEngine();
+        assertEquals("The engines fuel types should match", fuelType, engine.getFuelType());
+        //assertEquals("The engine fuel capacity should match", fuelCapacity, engine.getFuelCapacity());
+
+        assertEquals("The number of cars should match", nCars, train.getCars().size());
+        for (Car car : train.getCars()) {
+            assertEquals("Each car's capacity should match.", passengerCapacity, car.getCapacity());
+        }
+
         //fail();
     }
 
     @Test
     public void testTrainPassengerCount() {
+        FuelType fuelType = FuelType.ELECTRIC;
+        double fuelCapacity = 100.00;
+        int nCars = 5;
+        int passengerCapacity = 3;
+
+        Train train = new Train(fuelType, fuelCapacity, nCars, passengerCapacity);
+        Passenger p1 = new Passenger("JJ Cham", 18);
+        Passenger p2 = new Passenger("Nazifa Ahmed", 18);
+
+        train.getCar(0).addPassenger(p1);
+        train.getCar(1).addPassenger(p2);
+
+        assertEquals("Passenger count should be 2", 2, train.seatsRemaining());
+
+        train.getCar(0).removePassenger(p1);
+
+        assertEquals("Total passenger count should be 1 now after removing p1.", 1, train.seatsRemaining());
+
+
+
         //fail();
     }
 
     @Test
     public void testTrainGetCar() {
+        FuelType fuelType = FuelType.ELECTRIC;
+        double fuelCapacity = 100.00;
+        int nCars = 5;
+        int passengerCapacity = 3;
+
+        Train train = new Train(fuelType, fuelCapacity, nCars, passengerCapacity);
+
+        Car firstCar = train.getCar(0);
+        assertNotNull("The first car should not be null", firstCar);
+        assertEquals("The first car's capacity should match", passengerCapacity, firstCar.getCapacity());
+
+        Car lastCar = train.getCar(nCars - 1);
+
+        assertNotNull("The last car should not be null.", lastCar);
+        assertEquals("The last car's capacity should match.", passengerCapacity, lastCar.getCapacity());
+
         //fail();
     }
 
     @Test
     public void testTrainPrintManifest() {
+        FuelType fuelType = FuelType.ELECTRIC;
+        double fuelCapacity = 100.00;
+        int nCars = 5;
+        int passengerCapacity = 3;
+
+        Train train = new Train(fuelType, fuelCapacity, nCars, passengerCapacity);
+        Passenger p1 = new Passenger("JJ Cham", 18);
+        Passenger p2 = new Passenger("Nazifa Ahmed", 18);
+
+        train.getCar(0).addPassenger(p1); 
+        train.getCar(1).addPassenger(p2);
+
+
+
         //fail();
     }
     
